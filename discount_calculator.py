@@ -15,7 +15,7 @@ original_price = float(input(f"Enter the original price of {product_name}: "))
 discount_percent = float(input(f"Enter the discount percentage for {product_name}: "))
 
 
-final_price = calculate_discount(original_price, discoun_percent)
+final_price = calculate_discount(original_price, discount_percent)
 
 # result 
 print("\n--- Receipt ---")
