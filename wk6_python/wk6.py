@@ -15,7 +15,7 @@ def main():
             break
         urls.append(url)
 
-    # Tipos de imagens permitidos
+    # Images allowed types
     allowed_types = ('image/jpeg', 'image/png', 'image/gif')
 
     for url in urls:    
@@ -27,13 +27,13 @@ def main():
             response = requests.get(url, timeout=10)
             response.raise_for_status()  # Raise exception for bad status codes
 
-            # Verificar o tipo de arquivo
+            # Verify the archive type
             content_type = response.headers.get("Content-Type", "")
             if content_type not in allowed_types:
                 print(f"✗ Type not Allowed: {content_type}")
                 continue
 
-            # Verificar tamanho do arquivo (máx. 5 MB)
+            # Verify the archive type (máx. 5 MB)
             content_length = int(response.headers.get("Content-Length", 0))
             if content_length > 5 * 1024 * 1024:  # 5 MB
                 print(f"✗ Archive too big ({content_length/1024/1024:.2f} MB).")
